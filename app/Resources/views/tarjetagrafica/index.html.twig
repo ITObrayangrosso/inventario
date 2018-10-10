@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Tarjetagraficas list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Descripcion</th>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for tarjetaGrafica in tarjetaGraficas %}
+            <tr>
+                <td><a href="{{ path('tarjetagrafica_show', { 'id': tarjetaGrafica.id }) }}">{{ tarjetaGrafica.descripcion }}</a></td>
+                <td>{{ tarjetaGrafica.id }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('tarjetagrafica_show', { 'id': tarjetaGrafica.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('tarjetagrafica_edit', { 'id': tarjetaGrafica.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('tarjetagrafica_new') }}">Create a new tarjetaGrafica</a>
+        </li>
+    </ul>
+{% endblock %}

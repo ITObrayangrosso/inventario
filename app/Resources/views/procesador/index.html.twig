@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Procesadors list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Descripcion</th>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for procesador in procesadors %}
+            <tr>
+                <td><a href="{{ path('procesador_show', { 'id': procesador.id }) }}">{{ procesador.descripcion }}</a></td>
+                <td>{{ procesador.id }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('procesador_show', { 'id': procesador.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('procesador_edit', { 'id': procesador.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('procesador_new') }}">Create a new procesador</a>
+        </li>
+    </ul>
+{% endblock %}

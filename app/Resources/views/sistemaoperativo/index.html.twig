@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Sistemaoperativos list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Descripcion</th>
+                <th>Bytes</th>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for sistemaOperativo in sistemaOperativos %}
+            <tr>
+                <td><a href="{{ path('sistemaoperativo_show', { 'id': sistemaOperativo.id }) }}">{{ sistemaOperativo.descripcion }}</a></td>
+                <td>{{ sistemaOperativo.bytes }}</td>
+                <td>{{ sistemaOperativo.id }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('sistemaoperativo_show', { 'id': sistemaOperativo.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('sistemaoperativo_edit', { 'id': sistemaOperativo.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('sistemaoperativo_new') }}">Create a new sistemaOperativo</a>
+        </li>
+    </ul>
+{% endblock %}

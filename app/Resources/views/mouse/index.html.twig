@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Mice list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Marca</th>
+                <th>Serial</th>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for mouse in mice %}
+            <tr>
+                <td><a href="{{ path('mouse_show', { 'id': mouse.id }) }}">{{ mouse.marca }}</a></td>
+                <td>{{ mouse.serial }}</td>
+                <td>{{ mouse.id }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('mouse_show', { 'id': mouse.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('mouse_edit', { 'id': mouse.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('mouse_new') }}">Create a new mouse</a>
+        </li>
+    </ul>
+{% endblock %}

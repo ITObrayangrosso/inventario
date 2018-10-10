@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Monitors list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Serial</th>
+                <th>Pulgadas</th>
+                <th>Ocupado</th>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for monitor in monitors %}
+            <tr>
+                <td><a href="{{ path('monitor_show', { 'id': monitor.id }) }}">{{ monitor.marca }}</a></td>
+                <td>{{ monitor.modelo }}</td>
+                <td>{{ monitor.serial }}</td>
+                <td>{{ monitor.pulgadas }}</td>
+                <td>{% if monitor.ocupado %}Yes{% else %}No{% endif %}</td>
+                <td>{{ monitor.id }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('monitor_show', { 'id': monitor.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('monitor_edit', { 'id': monitor.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('monitor_new') }}">Create a new monitor</a>
+        </li>
+    </ul>
+{% endblock %}

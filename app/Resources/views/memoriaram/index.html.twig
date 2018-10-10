@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Memoriarams list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Descripcion</th>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for memoriaRam in memoriaRams %}
+            <tr>
+                <td><a href="{{ path('memoriaram_show', { 'id': memoriaRam.id }) }}">{{ memoriaRam.descripcion }}</a></td>
+                <td>{{ memoriaRam.id }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('memoriaram_show', { 'id': memoriaRam.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('memoriaram_edit', { 'id': memoriaRam.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('memoriaram_new') }}">Create a new memoriaRam</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -3,22 +3,27 @@
 namespace AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Routing\Annotation\Route;
+use AppBundle\Entity\Usuario;
+use AppBundle\Form\UsuarioType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class UsuarioController extends Controller
 {
     /**
-     * @Route("/aloja", name="plele")
+     * @Route("/registrar/usuario", name="homepage")
      */
     public function indexAction(Request $request)
     {   
+        $styleinputs = array('attr' => array('class' => 'form-control'));
         $forma = new Usuario();
         $form = $this->createFormBuilder($forma)
-        ->add('nombre',TextType::class)
-        ->add('apellido',TextType::class)
-        ->add('documento',TextType::class)
-        ->add('save',SubmitType::class, array('label' => 'Guardar'))
+        ->add('nombre',TextType::class,$styleinputs)
+        ->add('apellido',TextType::class,$styleinputs)
+        ->add('documento',TextType::class,$styleinputs)
+        ->add('save',SubmitType::class, array('label' => 'Guardar','attr' => array('class' => 'btn-primary')))
         ->getForm();
 
         $form->handleRequest($request);

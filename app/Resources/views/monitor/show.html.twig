@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Monitor</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Marca</th>
+                <td>{{ monitor.marca }}</td>
+            </tr>
+            <tr>
+                <th>Modelo</th>
+                <td>{{ monitor.modelo }}</td>
+            </tr>
+            <tr>
+                <th>Serial</th>
+                <td>{{ monitor.serial }}</td>
+            </tr>
+            <tr>
+                <th>Pulgadas</th>
+                <td>{{ monitor.pulgadas }}</td>
+            </tr>
+            <tr>
+                <th>Ocupado</th>
+                <td>{% if monitor.ocupado %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Id</th>
+                <td>{{ monitor.id }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('monitor_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('monitor_edit', { 'id': monitor.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
