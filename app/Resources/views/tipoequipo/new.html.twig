@@ -1,16 +1,13 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Tipoequipo creation</h1>
+    <h1>Crear Tipo equipo</h1>
 
     {{ form_start(form) }}
         {{ form_widget(form) }}
-        <input type="submit" value="Create" />
+        </br><input type="submit"  class="btn boton_crear " value="Guardar" />
     {{ form_end(form) }}
+    <br>
+    <a href="{{ path('tipoequipo_index') }}">Volver a la lista</a>
 
-    <ul>
-        <li>
-            <a href="{{ path('tipoequipo_index') }}">Back to the list</a>
-        </li>
-    </ul>
 {% endblock %}

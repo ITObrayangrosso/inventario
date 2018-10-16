@@ -12,6 +12,10 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Area
 {
+    function __toString() 
+    {
+        return $this->getNombre();
+    }
     /**
      * @var string
      *

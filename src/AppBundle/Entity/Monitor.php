@@ -14,7 +14,7 @@ class Monitor
 {
     function __toString() 
     {
-        return $this->getMarca();
+        return $this->getMarca()."/".$this->getModelo()."/".$this->getSerial();
     }
     /**
      * @var string

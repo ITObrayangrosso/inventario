@@ -1,21 +1,16 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Area edit</h1>
+    <h1>Editar Área</h1>
 
     {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
+        {{ form_widget(edit_form) }}</br>
+        <input type="submit" class="btn boton_crear" value="Guardar" />
     {{ form_end(edit_form) }}
-
+    </br>
     <ul>
         <li>
-            <a href="{{ path('area_index') }}">Back to the list</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
+            <a href="{{ path('area_index') }}">Volver a la lista</a>
         </li>
     </ul>
 {% endblock %}

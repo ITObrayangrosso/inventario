@@ -1,32 +1,16 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Memoriaram</h1>
+    <h1>Memoria ram</h1>
 
-    <table>
+    <table class="table table-striped table-bordered table-hover">
         <tbody>
             <tr>
                 <th>Descripcion</th>
                 <td>{{ memoriaRam.descripcion }}</td>
             </tr>
-            <tr>
-                <th>Id</th>
-                <td>{{ memoriaRam.id }}</td>
-            </tr>
         </tbody>
     </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('memoriaram_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('memoriaram_edit', { 'id': memoriaRam.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+    <a  class="btn boton_crear" href="{{ path('memoriaram_edit', { 'id': memoriaRam.id }) }}">Editar</a>
+    <a href="{{ path('memoriaram_index') }}">Volver a la lista</a>
 {% endblock %}

@@ -13,7 +13,7 @@ class CpuType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('marca')->add('modelo')->add('serial');
+        $builder->add('codigo')->add('marca')->add('modelo')->add('serial');
     }/**
      * {@inheritdoc}
      */

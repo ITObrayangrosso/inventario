@@ -1,32 +1,16 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Tarjetagrafica</h1>
+    <h1>Tarjeta grafica</h1>
 
-    <table>
+    <table class="table table-striped table-bordered table-hover">
         <tbody>
             <tr>
                 <th>Descripcion</th>
                 <td>{{ tarjetaGrafica.descripcion }}</td>
             </tr>
-            <tr>
-                <th>Id</th>
-                <td>{{ tarjetaGrafica.id }}</td>
-            </tr>
         </tbody>
     </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('tarjetagrafica_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('tarjetagrafica_edit', { 'id': tarjetaGrafica.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+    <a class="btn boton_crear" href="{{ path('tarjetagrafica_edit', { 'id': tarjetaGrafica.id }) }}">Editar</a>
+    <a href="{{ path('tarjetagrafica_index') }}">Volver a la lista</a>
 {% endblock %}

@@ -1,21 +1,13 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Tarjetagrafica edit</h1>
+    <h1>Editar Tarjeta grafica</h1>
 
     {{ form_start(edit_form) }}
         {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
+        <br><input type="submit" value="Guardar" class="btn boton_crear" />
     {{ form_end(edit_form) }}
-
-    <ul>
-        <li>
-            <a href="{{ path('tarjetagrafica_index') }}">Back to the list</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+    <br>
+    <a href="{{ path('tarjetagrafica_index') }}">Volver a la lista</a>
+     
 {% endblock %}

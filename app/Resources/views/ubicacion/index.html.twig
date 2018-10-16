@@ -1,13 +1,12 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Ubicacions list</h1>
+    <h1>Lista de Ubicaciones</h1>
 
-    <table>
+    <table class="table table-striped table-bordered table-hover">
         <thead>
             <tr>
                 <th>Descripcion</th>
-                <th>Id</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -15,14 +14,13 @@
         {% for ubicacion in ubicacions %}
             <tr>
                 <td><a href="{{ path('ubicacion_show', { 'id': ubicacion.id }) }}">{{ ubicacion.descripcion }}</a></td>
-                <td>{{ ubicacion.id }}</td>
                 <td>
                     <ul>
-                        <li>
-                            <a href="{{ path('ubicacion_show', { 'id': ubicacion.id }) }}">show</a>
+                        <li class="btn boton_crear">
+                            <a href="{{ path('ubicacion_show', { 'id': ubicacion.id }) }}">Ver</a>
                         </li>
-                        <li>
-                            <a href="{{ path('ubicacion_edit', { 'id': ubicacion.id }) }}">edit</a>
+                        <li class="btn boton_crear">
+                            <a href="{{ path('ubicacion_edit', { 'id': ubicacion.id }) }}">Editar</a>
                         </li>
                     </ul>
                 </td>
@@ -30,10 +28,5 @@
         {% endfor %}
         </tbody>
     </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('ubicacion_new') }}">Create a new ubicacion</a>
-        </li>
-    </ul>
+    <a class="btn boton_crear" href="{{ path('ubicacion_new') }}">Crear Nuevo</a>
 {% endblock %}

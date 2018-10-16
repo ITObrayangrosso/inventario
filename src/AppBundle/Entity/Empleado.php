@@ -14,7 +14,7 @@ class Empleado
 {
     function __toString() 
     {
-        return $this->getNombres();
+        return $this->getNombres()." ".$this->getApellidos();
     }
     /**
      * @var string

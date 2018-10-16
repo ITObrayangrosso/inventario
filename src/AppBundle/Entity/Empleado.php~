@@ -12,6 +12,10 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Empleado
 {
+    function __toString() 
+    {
+        return $this->getNombres()." ".$this->getApellidos();
+    }
     /**
      * @var string
      *

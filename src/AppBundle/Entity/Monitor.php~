@@ -12,6 +12,10 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Monitor
 {
+    function __toString() 
+    {
+        return $this->getMarca()."/".$this->getModelo()."/".$this->getSerial();
+    }
     /**
      * @var string
      *

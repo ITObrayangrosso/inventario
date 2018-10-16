@@ -1,13 +1,12 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Tipoequipos list</h1>
+    <h1>Lista de Tipos equipos</h1>
 
-    <table>
+    <table class="table table-striped table-bordered table-hover">
         <thead>
             <tr>
                 <th>Nombre</th>
-                <th>Id</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -15,14 +14,13 @@
         {% for tipoEquipo in tipoEquipos %}
             <tr>
                 <td><a href="{{ path('tipoequipo_show', { 'id': tipoEquipo.id }) }}">{{ tipoEquipo.nombre }}</a></td>
-                <td>{{ tipoEquipo.id }}</td>
                 <td>
                     <ul>
-                        <li>
-                            <a href="{{ path('tipoequipo_show', { 'id': tipoEquipo.id }) }}">show</a>
+                        <li class="btn boton_crear">
+                            <a href="{{ path('tipoequipo_show', { 'id': tipoEquipo.id }) }}">Ver</a>
                         </li>
-                        <li>
-                            <a href="{{ path('tipoequipo_edit', { 'id': tipoEquipo.id }) }}">edit</a>
+                        <li class="btn boton_crear">
+                            <a href="{{ path('tipoequipo_edit', { 'id': tipoEquipo.id }) }}">Editar</a>
                         </li>
                     </ul>
                 </td>
@@ -30,10 +28,6 @@
         {% endfor %}
         </tbody>
     </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('tipoequipo_new') }}">Create a new tipoEquipo</a>
-        </li>
-    </ul>
+    <a class="btn boton_crear" href="{{ path('tipoequipo_new') }}">Crear Nuevo</a>
+     
 {% endblock %}

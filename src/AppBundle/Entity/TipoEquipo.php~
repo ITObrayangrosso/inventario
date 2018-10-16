@@ -12,6 +12,10 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class TipoEquipo
 {
+    function __toString() 
+    {
+        return $this->getNombre();
+    }
     /**
      * @var string
      *

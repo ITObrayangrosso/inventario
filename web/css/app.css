@@ -1,0 +1,16 @@
+.conainer_body{
+    border-top: solid 4px #FFC300;
+    border-bottom: solid 4px #FFC300;
+    border-radius: 15px;
+    padding: 25px;
+    background-color: white;
+}
+.boton_crear{
+    border: solid 2px #FFC300;
+    color: blue;       
+    margin: 3px;
+}
+.boton_comun{
+    background-color: #FFC300;
+   
+}

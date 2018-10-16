@@ -7,11 +7,15 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Equipo
  *
- 
+ * @ORM\Table(name="equipo", indexes={@ORM\Index(name="IDX_C49C530BBD0F409C", columns={"area_id"}), @ORM\Index(name="IDX_C49C530B3917014", columns={"cpu_id"}), @ORM\Index(name="IDX_C49C530B4CE1C902", columns={"monitor_id"}), @ORM\Index(name="IDX_C49C530B23574B71", columns={"mouse_id"}), @ORM\Index(name="IDX_C49C530BF5C57A0A", columns={"memoria_ram_id"}), @ORM\Index(name="IDX_C49C530B4DD634CC", columns={"procesador_id"}), @ORM\Index(name="IDX_C49C530BC616A017", columns={"sistema_operativo_id"}), @ORM\Index(name="IDX_C49C530BF457B2F9", columns={"tarjeta_grafica_id"}), @ORM\Index(name="IDX_C49C530B57E", columns={"ubicacion_id"}),  @ORM\Index(name="IDX_C49C530B952BE730", columns={"empleado_id"}), @ORM\Index(name="IDX_C49C530BE05544A3", columns={"tipo_equipo_id"})})
  * @ORM\Entity
  */
 class Equipo
 {
+    function __toString() 
+    {
+        return $this->getId();
+    }
     /**
      * @var int
      *

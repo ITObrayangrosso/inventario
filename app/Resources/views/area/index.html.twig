@@ -1,13 +1,12 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Areas list</h1>
+    <h1>Lista de Áreas </h1>
 
-    <table>
+    <table class="table table-striped table-bordered table-hover">
         <thead>
             <tr>
                 <th>Nombre</th>
-                <th>Id</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -15,14 +14,13 @@
         {% for area in areas %}
             <tr>
                 <td><a href="{{ path('area_show', { 'id': area.id }) }}">{{ area.nombre }}</a></td>
-                <td>{{ area.id }}</td>
                 <td>
                     <ul>
-                        <li>
-                            <a href="{{ path('area_show', { 'id': area.id }) }}">show</a>
+                        <li class="glyphicon glyphicon-eye-open btn boton_comun">                        
+                            <a href="{{ path('area_show', { 'id': area.id }) }}">Ver</a>
                         </li>
-                        <li>
-                            <a href="{{ path('area_edit', { 'id': area.id }) }}">edit</a>
+                        <li class="glyphicon glyphicon-pencil btn boton_comun">
+                            <a href="{{ path('area_edit', { 'id': area.id }) }}">Editar</a>
                         </li>
                     </ul>
                 </td>
@@ -30,10 +28,5 @@
         {% endfor %}
         </tbody>
     </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('area_new') }}">Create a new area</a>
-        </li>
-    </ul>
+    <a class="btn boton_crear" href="{{ path('area_new') }}">Crear Nuevo</a>    
 {% endblock %}

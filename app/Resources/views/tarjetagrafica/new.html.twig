@@ -1,16 +1,13 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Tarjetagrafica creation</h1>
+    <h1>Crear Tarjeta grafica</h1>
 
     {{ form_start(form) }}
         {{ form_widget(form) }}
-        <input type="submit" value="Create" />
+        </br><input type="submit"  class="btn boton_crear " value="Guardar" />
     {{ form_end(form) }}
-
-    <ul>
-        <li>
-            <a href="{{ path('tarjetagrafica_index') }}">Back to the list</a>
-        </li>
-    </ul>
+    <br>
+    <a href="{{ path('tarjetagrafica_index') }}">Volver a la lista</a>
+        
 {% endblock %}

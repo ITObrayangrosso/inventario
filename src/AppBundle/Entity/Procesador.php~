@@ -12,6 +12,10 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Procesador
 {
+    function __toString() 
+    {
+        return $this->getDescripcion();
+    }
     /**
      * @var string
      *

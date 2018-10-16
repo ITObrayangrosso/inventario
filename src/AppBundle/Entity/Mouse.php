@@ -14,7 +14,7 @@ class Mouse
 {
     function __toString() 
     {
-        return $this->getMarca();
+        return $this->getMarca()."/".$this->getSerial();
     }
     /**
      * @var string

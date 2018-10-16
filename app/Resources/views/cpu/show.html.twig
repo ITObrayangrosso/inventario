@@ -3,7 +3,7 @@
 {% block body %}
     <h1>Cpu</h1>
 
-    <table>
+    <table class="table">
         <tbody>
             <tr>
                 <th>Marca</th>
@@ -17,24 +17,10 @@
                 <th>Serial</th>
                 <td>{{ cpu.serial }}</td>
             </tr>
-            <tr>
-                <th>Id</th>
-                <td>{{ cpu.id }}</td>
-            </tr>
         </tbody>
     </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('cpu_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('cpu_edit', { 'id': cpu.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
+    <ul>     
+        <a class="btn boton_crear" href="{{ path('cpu_edit', { 'id': cpu.id }) }}">Editar</a>
+        <a href="{{ path('cpu_index') }}">Volver a la lista</a>
     </ul>
 {% endblock %}

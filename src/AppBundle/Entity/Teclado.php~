@@ -12,6 +12,10 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Teclado
 {
+    function __toString() 
+    {
+        return $this->getId();
+    }
     /**
      * @var string
      *

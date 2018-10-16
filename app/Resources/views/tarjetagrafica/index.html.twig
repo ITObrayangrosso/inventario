@@ -1,13 +1,12 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Tarjetagraficas list</h1>
+    <h1>Lista de Tarjetas graficas</h1>
 
-    <table>
+    <table class="table table-striped table-bordered table-hover">
         <thead>
             <tr>
                 <th>Descripcion</th>
-                <th>Id</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -15,14 +14,13 @@
         {% for tarjetaGrafica in tarjetaGraficas %}
             <tr>
                 <td><a href="{{ path('tarjetagrafica_show', { 'id': tarjetaGrafica.id }) }}">{{ tarjetaGrafica.descripcion }}</a></td>
-                <td>{{ tarjetaGrafica.id }}</td>
                 <td>
                     <ul>
-                        <li>
-                            <a href="{{ path('tarjetagrafica_show', { 'id': tarjetaGrafica.id }) }}">show</a>
+                        <li class="btn boton_crear">
+                            <a href="{{ path('tarjetagrafica_show', { 'id': tarjetaGrafica.id }) }}">Ver</a>
                         </li>
-                        <li>
-                            <a href="{{ path('tarjetagrafica_edit', { 'id': tarjetaGrafica.id }) }}">edit</a>
+                        <li class="btn boton_crear">
+                            <a href="{{ path('tarjetagrafica_edit', { 'id': tarjetaGrafica.id }) }}">Editar</a>
                         </li>
                     </ul>
                 </td>
@@ -30,10 +28,5 @@
         {% endfor %}
         </tbody>
     </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('tarjetagrafica_new') }}">Create a new tarjetaGrafica</a>
-        </li>
-    </ul>
+    <a class="btn boton_crear" href="{{ path('tarjetagrafica_new') }}">Crear Nuevo</a>
 {% endblock %}

@@ -9,13 +9,13 @@ class CpuControllerTest extends WebTestCase
     /*
     public function testCompleteScenario()
     {
-        // Create a new client to browse the application
+        // Crear Nuevo client to browse the application
         $client = static::createClient();
 
-        // Create a new entry in the database
+        // Crear Nuevo entry in the database
         $crawler = $client->request('GET', '/cpu/');
         $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /cpu/");
-        $crawler = $client->click($crawler->selectLink('Create a new entry')->link());
+        $crawler = $client->click($crawler->selectLink('Crear Nuevo entry')->link());
 
         // Fill in the form and submit it
         $form = $crawler->selectButton('Create')->form(array(

@@ -1,15 +1,14 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Cpus list</h1>
+    <h1>Lista de Cpus</h1>
 
-    <table>
+    <table class="table table-striped table-bordered table-hover">
         <thead>
             <tr>
                 <th>Marca</th>
                 <th>Modelo</th>
                 <th>Serial</th>
-                <th>Id</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -19,14 +18,13 @@
                 <td><a href="{{ path('cpu_show', { 'id': cpu.id }) }}">{{ cpu.marca }}</a></td>
                 <td>{{ cpu.modelo }}</td>
                 <td>{{ cpu.serial }}</td>
-                <td>{{ cpu.id }}</td>
                 <td>
                     <ul>
-                        <li>
-                            <a href="{{ path('cpu_show', { 'id': cpu.id }) }}">show</a>
+                        <li class="glyphicon glyphicon-zoom-in btn boton_comun">
+                            <a  href="{{ path('cpu_show', { 'id': cpu.id }) }}">Ver</a>
                         </li>
-                        <li>
-                            <a href="{{ path('cpu_edit', { 'id': cpu.id }) }}">edit</a>
+                        <li class="glyphicon glyphicon-pencil btn boton_comun">
+                            <a  href="{{ path('cpu_edit', { 'id': cpu.id }) }}">Editar</a>
                         </li>
                     </ul>
                 </td>
@@ -35,9 +33,7 @@
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('cpu_new') }}">Create a new cpu</a>
-        </li>
+    <ul class="btn boton_crear">
+            <a href="{{ path('cpu_new') }}">Crear Nuevo</a>
     </ul>
 {% endblock %}

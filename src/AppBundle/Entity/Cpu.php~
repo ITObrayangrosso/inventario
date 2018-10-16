@@ -12,6 +12,10 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Cpu
 {
+    function __toString() 
+    {
+        return $this->getMarca()."/".$this->getSerial();
+    }
     /**
      * @var string
      *
@@ -41,6 +45,14 @@ class Cpu
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="codigo", type="integer")
+     */
+    private $codigo;
+
 
 
 

@@ -3,7 +3,7 @@
 {% block body %}
     <h1>Monitor</h1>
 
-    <table>
+    <table class="table table-striped table-bordered table-hover">
         <tbody>
             <tr>
                 <th>Marca</th>
@@ -23,26 +23,10 @@
             </tr>
             <tr>
                 <th>Ocupado</th>
-                <td>{% if monitor.ocupado %}Yes{% else %}No{% endif %}</td>
-            </tr>
-            <tr>
-                <th>Id</th>
-                <td>{{ monitor.id }}</td>
+                <td>{% if monitor.ocupado %}Si{% else %}No{% endif %}</td>
             </tr>
         </tbody>
     </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('monitor_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('monitor_edit', { 'id': monitor.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+    <a class="btn boton_crear" href="{{ path('monitor_edit', { 'id': monitor.id }) }}">Editar</a>
+    <a href="{{ path('monitor_index') }}">Volver a la lista</a>      
 {% endblock %}

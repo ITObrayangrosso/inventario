@@ -3,30 +3,14 @@
 {% block body %}
     <h1>Area</h1>
 
-    <table>
+    <table class="table table-striped table-bordered table-hover">
         <tbody>
             <tr>
                 <th>Nombre</th>
                 <td>{{ area.nombre }}</td>
             </tr>
-            <tr>
-                <th>Id</th>
-                <td>{{ area.id }}</td>
-            </tr>
         </tbody>
     </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('area_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('area_edit', { 'id': area.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+    <a  class="btn boton_crear" href="{{ path('area_edit', { 'id': area.id }) }}">Editar</a>
+    <a href="{{ path('area_index') }}">Volver a la lista</a>
 {% endblock %}

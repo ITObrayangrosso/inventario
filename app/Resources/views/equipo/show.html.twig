@@ -3,7 +3,7 @@
 {% block body %}
     <h1>Equipo</h1>
 
-    <table>
+    <table class="table table-striped table-bordered table-hover">
         <tbody>
             <tr>
                 <th>Id</th>
@@ -14,10 +14,10 @@
 
     <ul>
         <li>
-            <a href="{{ path('equipo_index') }}">Back to the list</a>
+            <a href="{{ path('equipo_index') }}">Volver a la lista</a>
         </li>
         <li>
-            <a href="{{ path('equipo_edit', { 'id': equipo.id }) }}">Edit</a>
+            <a href="{{ path('equipo_edit', { 'id': equipo.id }) }}">Editar</a>
         </li>
         <li>
             {{ form_start(delete_form) }}

@@ -1,37 +1,48 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Equipos list</h1>
+    <h1>Lista de Equipos Asignados</h1>
 
-    <table>
+    <table class="table table-striped table-bordered table-hover table-responsive">
         <thead>
             <tr>
-                <th>Id</th>
+                <th>Empleado</th>
+                <th>Tipo Equipo</th>
+                <th>Cpu/Serial</th>
+                <th>Monitor/Serial</th>
+                <th>Mouse/Serial</th>
+                <th>Procesador</th>
+                <th>Sistema Operativo</th>
+                <th>Ubicación</th>
+                <th>Área</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for equipo in equipos %}
             <tr>
-                <td><a href="{{ path('equipo_show', { 'id': equipo.id }) }}">{{ equipo.id }}</a></td>
+                <td><a href="{{ path('empleado_show', { 'id': equipo.empleado.id }) }}">{{ equipo.empleado.nombres ~" "~ equipo.empleado.apellidos }}</a></td>
+                <td><a href="{{ path('tipoequipo_show', { 'id': equipo.tipoEquipo.id }) }}">{{ equipo.tipoEquipo.nombre }}</a></td>
+                <td><a href="{{ path('cpu_show', { 'id': equipo.cpu.id }) }}">{{ equipo.cpu.marca ~" / "~ equipo.cpu.serial }}</a></td>
+                <td><a href="{{ path('monitor_show', { 'id': equipo.monitor.id }) }}">{{ equipo.monitor.marca ~" / "~ equipo.monitor.serial }}</a></td>
+                <td><a href="{{ path('mouse_show', { 'id': equipo.mouse.id }) }}">{{ equipo.mouse.marca ~" / "~ equipo.mouse.serial }}</a></td>
+                <td><a href="{{ path('procesador_show', { 'id': equipo.procesador.id }) }}">{{ equipo.procesador.descripcion }}</a></td>
+                <td><a href="{{ path('sistemaoperativo_show', { 'id': equipo.sistemaOperativo.id }) }}">{{ equipo.sistemaOperativo.descripcion }}</a></td>
+                <td><a href="{{ path('ubicacion_show', { 'id': equipo.ubicacion.id }) }}">{{ equipo.ubicacion.descripcion }}</a></td>
+                <td><a href="{{ path('area_show', { 'id': equipo.area.id }) }}">{{ equipo.area.nombre }}</a></td>
                 <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('equipo_show', { 'id': equipo.id }) }}">show</a>
+                    
+                        <li class="btn boton_crear">
+                            <a href="{{ path('equipo_show', { 'id': equipo.id }) }}">Ver</a>
                         </li>
-                        <li>
-                            <a href="{{ path('equipo_edit', { 'id': equipo.id }) }}">edit</a>
+                        <li class="btn boton_crear">
+                            <a href="{{ path('equipo_edit', { 'id': equipo.id }) }}">Editar</a>
                         </li>
-                    </ul>
+                    
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('equipo_new') }}">Create a new equipo</a>
-        </li>
-    </ul>
+<a class="btn boton_crear" href="{{ path('equipo_new') }}">Crear Asignación de Equipos</a>
 {% endblock %}

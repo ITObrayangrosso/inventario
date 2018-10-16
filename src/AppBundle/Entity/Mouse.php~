@@ -12,6 +12,10 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Mouse
 {
+    function __toString() 
+    {
+        return $this->getMarca()."/".$this->getSerial();
+    }
     /**
      * @var string
      *
