@@ -14,7 +14,7 @@ class Cpu
 {
     function __toString() 
     {
-        return $this->getMarca()."/".$this->getSerial();
+        return $this->getCodigo()."/".$this->getMarca()."/".$this->getSerial();
     }
     /**
      * @var string
@@ -136,5 +136,29 @@ class Cpu
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set codigo.
+     *
+     * @param int $codigo
+     *
+     * @return Cpu
+     */
+    public function setCodigo($codigo)
+    {
+        $this->codigo = $codigo;
+
+        return $this;
+    }
+
+    /**
+     * Get codigo.
+     *
+     * @return int
+     */
+    public function getCodigo()
+    {
+        return $this->codigo;
     }
 }

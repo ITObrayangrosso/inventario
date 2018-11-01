@@ -7,7 +7,9 @@
         <thead>
             <tr>
                 <th>Marca</th>
+               
                 <th>Modelo</th>
+                 <th>Codigo</th>
                 <th>Serial</th>
                 <th>Actions</th>
             </tr>
@@ -17,6 +19,7 @@
             <tr>
                 <td><a href="{{ path('cpu_show', { 'id': cpu.id }) }}">{{ cpu.marca }}</a></td>
                 <td>{{ cpu.modelo }}</td>
+                <td>{{ cpu.codigo }}</td>
                 <td>{{ cpu.serial }}</td>
                 <td>
                     <ul>

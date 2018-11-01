@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Teclado</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Marca</th>
+                <td>{{ teclado.marca }}</td>
+            </tr>
+            <tr>
+                <th>Serial</th>
+                <td>{{ teclado.serial }}</td>
+            </tr>
+            <tr>
+                <th>Id</th>
+                <td>{{ teclado.id }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('teclado_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('teclado_edit', { 'id': teclado.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

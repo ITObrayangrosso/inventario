@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Crear Usuario</h1>
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="Guardar" class="btn boton_crear" />
+    {{ form_end(form) }}
+    <br>
+           <a href="{{ path('usuario_index') }}">Volver a la lista</a>
+{% endblock %}

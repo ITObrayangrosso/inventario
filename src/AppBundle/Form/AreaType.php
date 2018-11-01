@@ -13,7 +13,11 @@ class AreaType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nombre');
+        $builder->add('nombre', null, [
+            'attr' => [
+                'class' => 'form-control'
+            ]
+        ]);
     }/**
      * {@inheritdoc}
      */

@@ -6,7 +6,7 @@ use AppBundle\Entity\Area;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
-
+use Symfony\Component\HttpFoundation\Response;
 /**
  * Area controller.
  *
@@ -14,6 +14,16 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component
  */
 class AreaController extends Controller
 {
+    /**
+     * @Route("/jkj")
+     */
+    public function adminAction()
+    {
+        return new Response('<html><body>Admin page!</body></html>');
+    }
+
+
+
     /**
      * Lists all area entities.
      *

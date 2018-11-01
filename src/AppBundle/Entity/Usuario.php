@@ -12,6 +12,10 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Usuario
 {
+    function __toString() 
+    {
+        return $this->getDescripcion();
+    }
     /**
      * @var int
      *
@@ -31,16 +35,19 @@ class Usuario
     /**
      * @var string
      *
-     * @ORM\Column(name="apellido", type="string", length=100)
+     * @ORM\Column(name="password", type="string", length=100)
      */
-    private $apellido;
+    private $password;
 
     /**
-     * @var string
+     * @var \AppBundle\Entity\Equipo
      *
-     * @ORM\Column(name="documento", type="string", length=30)
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Equipo")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="equipo_id", referencedColumnName="id")
+     * })
      */
-    private $documento;
+    private $equipo;
 
 
     /**
@@ -78,50 +85,50 @@ class Usuario
     }
 
     /**
-     * Set apellido.
+     * Set password.
      *
-     * @param string $apellido
+     * @param string $password
      *
      * @return Usuario
      */
-    public function setApellido($apellido)
+    public function setPassword($password)
     {
-        $this->apellido = $apellido;
+        $this->password = $password;
 
         return $this;
     }
 
     /**
-     * Get apellido.
+     * Get password.
      *
      * @return string
      */
-    public function getApellido()
+    public function getPassword()
     {
-        return $this->apellido;
+        return $this->password;
     }
 
     /**
-     * Set documento.
+     * Set equipo.
      *
-     * @param string $documento
+     * @param \AppBundle\Entity\Equipo|null $equipo
      *
      * @return Usuario
      */
-    public function setDocumento($documento)
+    public function setEquipo(\AppBundle\Entity\Equipo $equipo = null)
     {
-        $this->documento = $documento;
+        $this->equipo = $equipo;
 
         return $this;
     }
 
     /**
-     * Get documento.
+     * Get equipo.
      *
-     * @return string
+     * @return \AppBundle\Entity\Equipo|null
      */
-    public function getDocumento()
+    public function getEquipo()
     {
-        return $this->documento;
+        return $this->equipo;
     }
 }

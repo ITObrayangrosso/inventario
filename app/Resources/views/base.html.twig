@@ -2,24 +2,26 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Inventario ITO!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         <link rel="stylesheet" href="{{ asset('css/bootstrap.css')}}">
         <link rel="stylesheet" href="{{ asset('css/app.css')}}">
-        <script src="{{ asset('js/jquery.js')}}"></script>
-        <script src="{{ asset('js/bootstrap.js')}}"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
-    <body class="container">
-        <div class="col-md-5 col-md-offset-3 erp">
-            <img src="{{ asset('img/Logo-Ito.png')}}" />
-        </div>
-        <div class="col-md-12">
-            <div class="conainer_body table-responsive" >
-                {% block body %}{% endblock %}
+    <body class="container-fluid">
+        <div class="row">
+            {% include 'navbar.html.twig' %}
+            <div class="col-md-12">
+                <center>   <img class="table-responsive" src="{{ asset('img/Logo-Ito.png')}}" /> </center>
             </div>
-        </div>
-        {% block javascripts %}{% endblock %}
+                <div class="conainer_body table-responsive" >
+                    {% block body %}{% endblock %}
+                </div>
+            </div>
+            {% block javascripts %}{% endblock %}
     </body>
 </html>

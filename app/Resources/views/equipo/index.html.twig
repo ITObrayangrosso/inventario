@@ -23,7 +23,7 @@
             <tr>
                 <td><a href="{{ path('empleado_show', { 'id': equipo.empleado.id }) }}">{{ equipo.empleado.nombres ~" "~ equipo.empleado.apellidos }}</a></td>
                 <td><a href="{{ path('tipoequipo_show', { 'id': equipo.tipoEquipo.id }) }}">{{ equipo.tipoEquipo.nombre }}</a></td>
-                <td><a href="{{ path('cpu_show', { 'id': equipo.cpu.id }) }}">{{ equipo.cpu.marca ~" / "~ equipo.cpu.serial }}</a></td>
+                <td><a href="{{ path('cpu_show', { 'id': equipo.cpu.id }) }}">{{ "Codigo "~ equipo.cpu.codigo }}</a></td>
                 <td><a href="{{ path('monitor_show', { 'id': equipo.monitor.id }) }}">{{ equipo.monitor.marca ~" / "~ equipo.monitor.serial }}</a></td>
                 <td><a href="{{ path('mouse_show', { 'id': equipo.mouse.id }) }}">{{ equipo.mouse.marca ~" / "~ equipo.mouse.serial }}</a></td>
                 <td><a href="{{ path('procesador_show', { 'id': equipo.procesador.id }) }}">{{ equipo.procesador.descripcion }}</a></td>
