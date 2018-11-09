@@ -6,21 +6,21 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class UsuarioType extends AbstractType
+class TecladoType extends AbstractType
 {
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nombre')->add('password')->add('equipo');
+        $builder->add('marca')->add('serial');
     }/**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Usuario'
+            'data_class' => 'AppBundle\Entity\Teclado'
         ));
     }
 
@@ -29,7 +29,7 @@ class UsuarioType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'appbundle_usuario';
+        return 'appbundle_teclado';
     }
 
 

@@ -19,25 +19,8 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {   
-        $styleinputs = array('attr' => array('class' => 'form-control'));
-        $forma = new Usuario();
-        $form = $this->createFormBuilder($forma)
-        ->add('nombre',TextType::class,$styleinputs)
-        ->add('apellido',TextType::class,$styleinputs)
-        ->add('documento',TextType::class,$styleinputs)
-        ->add('save',SubmitType::class, array('label' => 'Guardar','attr' => array('class' => 'btn-primary')))
-        ->getForm();
+        return $this->render('index.html.twig',array(
 
-        $form->handleRequest($request);
-         if ($form->isSubmitted() && $form->isValid()) {     
-            $task = $form->getData();
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($task);
-            $entityManager->flush();
-        }
-
-        return $this->render('default/usuario.html.twig',array(
-            'form' => $form->createView(),
         ));
     }
 }

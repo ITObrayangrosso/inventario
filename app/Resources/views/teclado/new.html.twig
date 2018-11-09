@@ -1,16 +1,16 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Crear Cpu</h1>
+    <h1>Teclado creation</h1>
 
     {{ form_start(form) }}
         {{ form_widget(form) }}
-        </br><input type="submit"  class="btn boton_crear " value="Guardar" />
+        <input type="submit" value="Create" />
     {{ form_end(form) }}
 
     <ul>
         <li>
-            <a href="{{ path('cpu_index') }}">Volver a la lista</a>
+            <a href="{{ path('teclado_index') }}">Back to the list</a>
         </li>
     </ul>
 {% endblock %}

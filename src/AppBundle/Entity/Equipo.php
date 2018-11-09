@@ -14,7 +14,7 @@ class Equipo
 {
     function __toString() 
     {
-        return $this->getId();
+        return "".$this->getCpu();
     }
     /**
      * @var int

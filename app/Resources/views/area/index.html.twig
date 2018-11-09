@@ -3,7 +3,7 @@
 {% block body %}
     <h1>Lista de Áreas </h1>
 
-    <table class="table table-striped table-bordered table-hover">
+    <table class="table table-striped table-bordered table-ho">
         <thead>
             <tr>
                 <th>Nombre</th>
@@ -16,11 +16,11 @@
                 <td><a href="{{ path('area_show', { 'id': area.id }) }}">{{ area.nombre }}</a></td>
                 <td>
                     <ul>
-                        <li class="glyphicon glyphicon-eye-open btn boton_comun">                        
-                            <a href="{{ path('area_show', { 'id': area.id }) }}">Ver</a>
+                        <li>                        
+                            <a class="glyphicon glyphicon-eye-open btn boton_comun" href="{{ path('area_show', { 'id': area.id }) }}"></a>
                         </li>
-                        <li class="glyphicon glyphicon-pencil btn boton_comun">
-                            <a href="{{ path('area_edit', { 'id': area.id }) }}">Editar</a>
+                        <li >
+                            <a  class="glyphicon glyphicon-pencil btn boton_comun" href="{{ path('area_edit', { 'id': area.id }) }}"></a>
                         </li>
                     </ul>
                 </td>

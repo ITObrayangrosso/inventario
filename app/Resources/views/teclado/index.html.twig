@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Teclados list</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Marca</th>
+                <th>Serial</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for teclado in teclados %}
+            <tr>
+                <td><a href="{{ path('teclado_show', { 'id': teclado.id }) }}">{{ teclado.marca }}</a></td>
+                <td>{{ teclado.serial }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('teclado_show', { 'id': teclado.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('teclado_edit', { 'id': teclado.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('teclado_new') }}">Create a new teclado</a>
+        </li>
+    </ul>
+{% endblock %}
